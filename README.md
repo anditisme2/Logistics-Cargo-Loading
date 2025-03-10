@@ -1,6 +1,7 @@
 # Logistics-Cargo-Loading
 
 **Overview**
+
 This project implements an optimized cargo-loading system using the 0/1 Knapsack Problem. It helps in determining the most valuable combination of cargo that can be loaded onto a vehicle while adhering to weight constraints.
 
 **Features**
