@@ -20,7 +20,9 @@ This project implements an optimized cargo-loading system using the 0/1 Knapsack
 2. Add real-time tracking and visual representation of loading
 
 **Contributors**
+
 Nandika Agarwal, Sristee Agrawal, Shreya Agarwal
 
 **Author**
+
 Anushka Rana
