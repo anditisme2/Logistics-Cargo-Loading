@@ -1,0 +1,212 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa;
+    color: #333;
+    overflow-x: hidden;
+  }
+  
+  header {
+    background: linear-gradient(to right, #00c6ff, #ff0077);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    animation: fadeInDown 1s ease-in-out;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  .intro, .animation, .user-input, .grid-section {
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1000px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .intro:hover, .animation:hover, .user-input:hover, .grid-section:hover {
+    transform: translateY(-5px);
+  }
+
+  .knapsack-animation {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+    position: relative;
+    min-height: 200px;
+  }
+  
+  .item, .knapsack {
+    background-color: #029dd1;
+    padding: 1.2rem;
+    border-radius: 12px;
+    text-align: center;
+    width: 140px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .item:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background-color: #b3e5fc;
+  }
+  
+  .knapsack {
+    background-color: #02d1ca;
+    color: white;
+    font-weight: bold;
+    transform-style: preserve-3d;
+  }
+  
+  .knapsack-animation::before {
+    content: "⛟";
+    font-size: 4rem;
+    position: absolute;
+    top: -60px;
+    left: -100px;
+    animation: truckMove 8s linear infinite;
+    z-index: 1;
+  }
+  
+  @keyframes truckMove {
+    0% { left: -50px; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  input, textarea {
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid #0288d1;
+    border-radius: 12px; 
+    background: #e3f2fd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    color: #333;
+  }
+  
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: #0072ff;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(0, 114, 255, 0.3);
+    transform: scale(1.02);
+  }
+  
+  input::placeholder, textarea::placeholder {
+    color: #0288d1;
+    font-style: italic;
+    opacity: 0.7;
+  }
+  
+  button {
+    background-color: #0288d1;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  }
+  
+  button:hover {
+    background-color: #0277bd;
+    transform: scale(1.03);
+  }
+  
+  button:active {
+    transform: scale(0.98);
+  }
+  
+
+  .grid-section {
+    text-align: center;
+  }
+  
+  .dp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 10px;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #b3e5fc;
+    border-radius: 12px;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+  }
+  
+  .grid-cell {
+    background: #81d4fa;
+    padding: 0.7rem;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .grid-cell:hover {
+    background: #4fc3f7;
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+  
+
+  .dynamic-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .dynamic-inputs input {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background: #f0f0f0;
+    color: #777;
+    font-size: 0.9rem;
+    border-top: 1px solid #ccc;
+    margin-top: 3rem;
+  }
+  
+  @keyframes fadeInDown {
+    from {opacity: 0; transform: translateY(-05px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  
+  @keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(05px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  

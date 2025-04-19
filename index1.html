@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>0/1 Knapsack Visualizer</title>
+  <link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+  <header>
+    <h1>0/1 Knapsack Problem</h1>
+    <p>An interactive way of the classic dynamic programming problem.</p>
+  </header>
+
+  <section class="intro">
+    <h2>What is the 0/1 Knapsack Problem?</h2>
+    <p>
+      Given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible. In the 0/1 Knapsack, each item can either be included or not.
+    </p>
+  </section>
+
+  <section class="animation">
+    <h2>Example Animation</h2>
+    <div class="knapsack-animation">
+      <div class="item" title="Value: 60, Weight: 10">📦 Item 1<br>Value: 60<br>Weight: 10</div>
+      <div class="item" title="Value: 100, Weight: 20">📦 Item 2<br>Value: 100<br>Weight: 20</div>
+      <div class="item" title="Value: 120, Weight: 30">📦 Item 3<br>Value: 120<br>Weight: 30</div>
+      <div class="knapsack" title="Maximum Capacity: 50">🧳 Knapsack<br>Capacity: 50</div>
+    </div>
+  </section>
+
+  <section class="user-input">
+    <h2>Try it Yourself!</h2>
+    <form id="inputForm">
+      <label for="numItems">Number of items:</label>
+      <input type="number" id="numItems" name="numItems" min="1" placeholder="e.g., 3" />
+
+      <div id="dynamicInputs" class="dynamic-inputs"></div>
+
+      <button type="submit" disabled title="Functionality not implemented yet">Submit</button>
+    </form>
+  </section>
+
+  <section class="grid-section">
+    <h2>Dynamic Programming Table</h2>
+    <div class="dp-grid">
+      <div class="grid-cell">0</div>
+      <div class="grid-cell">0</div>
+      <div class="grid-cell">60</div>
+      <div class="grid-cell">100</div>
+      <div class="grid-cell">160</div>
+    </div>
+  </section>
+
+  <script>
+    const numItemsInput = document.getElementById("numItems");
+    const dynamicInputsDiv = document.getElementById("dynamicInputs");
+
+    numItemsInput.addEventListener("input", () => {
+      dynamicInputsDiv.innerHTML = "";
+      const num = parseInt(numItemsInput.value);
+      if (!isNaN(num) && num > 0) {
+        for (let i = 1; i <= num; i++) {
+          const valueInput = document.createElement("input");
+          valueInput.placeholder = `Value ${i}`;
+          valueInput.name = `value${i}`;
+          const weightInput = document.createElement("input");
+          weightInput.placeholder = `Weight ${i}`;
+          weightInput.name = `weight${i}`;
+          dynamicInputsDiv.appendChild(valueInput);
+          dynamicInputsDiv.appendChild(weightInput);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
