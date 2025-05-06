@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>0/1 Knapsack Visualizer</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+    </head>
+    <body>
+        <header>
+        <h1>Logistics/Cargo Loading</h1>
+        <p>Your logistics loading problems made easier!!</p>
+        <nav>
+          <ul>
+              <li class="option"><a href="{{ url_for('get_items') }}">Need help with another loading?</a></li>
+          </ul>
+      </nav>
+    </header>
+    <section class="result">
+        <div>Optimal Value: </div>
+        <div class="grid-cell">{{ result }}</div>
+        <br>
+        <div>Items you should select: </div>
+        {% if selected_items %}
+          {% for item in selected_items %}
+            <div class="grid-cell">Item {{ item + 1 }}</div>
+            <br>
+          {% endfor %}
+        {% endif %}
+      </div>
+      
+    </section>
+    </body>
+</html>

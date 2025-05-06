@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>0/1 Knapsack Visualizer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Logistics/Cargo Loading</h1>
+    <p>Your logistics loading problems made easier!!</p>
+  </header>
+  <section class="user-input">
+    <form method="POST" action="{{ url_for('knapsack') }}">
+      <input type="hidden" name="items" value="{{ items }}">
+      <input type="hidden" name="capacity" value="{{ capacity }}">
+      {% for i in range(items) %}
+        <div>
+          <label>Item {{ i + 1 }} Value:</label>
+          <input type="number" name="value{{ i }}" required>
+          <label>Weight:</label>
+          <input type="number" name="weight{{ i }}" required>
+        </div><br>
+      {% endfor %}
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  </body>
+  </html>
