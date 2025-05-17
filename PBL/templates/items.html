@@ -17,10 +17,12 @@
       <input type="hidden" name="capacity" value="{{ capacity }}">
       {% for i in range(items) %}
         <div>
-          <label>Item {{ i + 1 }} Value:</label>
-          <input type="number" name="value{{ i }}" required>
+          <label>Item {{ i + 1 }}-</label>
+          <br>
+          <label>Profit:</label>
+          <input type="number" name="value{{ i }}" required min="0">
           <label>Weight:</label>
-          <input type="number" name="weight{{ i }}" required>
+          <input type="number" name="weight{{ i }}" required min="1">
         </div><br>
       {% endfor %}
       <button type="submit">Submit</button>
